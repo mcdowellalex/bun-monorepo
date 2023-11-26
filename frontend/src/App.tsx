@@ -1,4 +1,4 @@
-import { gql, useQuery } from '@apollo/client';
+import { gql, useQuery, useSubscription } from '@apollo/client';
 
 const GET_BOOKS = gql`
   query GetBooks {
@@ -10,8 +10,21 @@ const GET_BOOKS = gql`
   }
 `;
 
+const POST_CREATED = gql`
+  subscription PostFeed {
+    postCreated {
+      author
+      comment
+    }
+  }
+`
+
 function App() {
   const { data } = useQuery(GET_BOOKS);
+  // const subscriptionData = useSubscription(
+  //   POST_CREATED,
+  // );
+  // console.log(subscriptionData)
   
   return (
     <>

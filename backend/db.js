@@ -20,12 +20,29 @@ const typeDefs = `#graphql
     type Query {
         books: [Book]
     }
+    type Subscription {
+        postCreated: Post
+    }
 `;
   
 const resolvers = {
     Query: {
         books: () => books,
     },
+    Subscription: {
+        hello: {
+          // Example using an async generator
+          subscribe: async function* () {
+            for await (const word of ['Hello', 'Bonjour', 'Ciao']) {
+              yield { hello: word };
+            }
+          },
+        },
+        postCreated: {
+          // More on pubsub below
+          subscribe: () => pubsub.asyncIterator(['POST_CREATED']),
+        },
+      },
 };
 
 export {typeDefs, resolvers}
