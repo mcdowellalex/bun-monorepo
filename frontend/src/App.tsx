@@ -9,17 +9,17 @@ const GET_BOOKS = gql`
 `;
 
 function App() {
-  const { data } = useQuery(GET_BOOKS);
-  console.log(data)
+  // const { data } = useQuery(GET_BOOKS);
+  // console.log(data)
   return (
     <>
       <h1>Bun monorepo</h1>
       <div>Books:</div>
-      {data.books.map((book: any) => {
+      {/* {data.books.map((book: any) => {
         return(
           <div>{book.title}</div>
         )
-      })}
+      })} */}
     </>
   )
 }
