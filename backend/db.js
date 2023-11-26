@@ -1,16 +1,19 @@
 const books = [
     {
-      title: 'The Awakening',
-      author: 'Kate Chopin',
+        id: 1,
+        title: 'The Awakening',
+        author: 'Kate Chopin',
     },
     {
-      title: 'City of Glass',
-      author: 'Paul Auster',
+        id: 2,
+        title: 'City of Glass',
+        author: 'Paul Auster',
     },
 ];
   
 const typeDefs = `#graphql
     type Book {
+        id: ID
         title: String
         author: String
     }
