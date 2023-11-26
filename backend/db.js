@@ -25,4 +25,4 @@ const resolvers = {
     },
 };
 
-export {books, typeDefs, resolvers}
+export {typeDefs, resolvers}

@@ -1,6 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
-import { books, typeDefs, resolvers } from './db';
+import { typeDefs, resolvers } from './db';
 
 const server = new ApolloServer({
   typeDefs,
